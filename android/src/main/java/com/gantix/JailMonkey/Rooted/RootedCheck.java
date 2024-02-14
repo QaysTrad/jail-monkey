@@ -48,6 +48,7 @@ public class RootedCheck {
         private final boolean checkSuExists;
         private final boolean checkForRootNative;
         private final boolean checkForMagiskBinary;
+        private final boolean checkIsRooted;
 
         RootBeerResults(Context context) {
             final RootBeer rootBeer = new RootBeer(context);
@@ -62,12 +63,14 @@ public class RootedCheck {
             checkSuExists = rootBeer.checkSuExists();
             checkForRootNative = rootBeer.checkForRootNative();
             checkForMagiskBinary = rootBeer.checkForMagiskBinary();
+            checkIsRooted = rootBeer.isRooted()
         }
 
         public boolean isJailBroken() {
             return detectRootManagementApps || detectPotentiallyDangerousApps || checkForSuBinary
                     || checkForDangerousProps || checkForRWPaths
-                    || detectTestKeys || checkSuExists || checkForRootNative || checkForMagiskBinary;
+                    || detectTestKeys || checkSuExists || checkForRootNative || checkForMagiskBinary
+                    || checkIsRooted;
         }
 
         public Map<String, Object> toNativeMap() {
@@ -82,6 +85,7 @@ public class RootedCheck {
             map.put("checkSuExists", checkSuExists);
             map.put("checkForRootNative", checkForRootNative);
             map.put("checkForMagiskBinary", checkForMagiskBinary);
+            map.put("checkIsRooted", checkIsRooted);
 
             return map;
         }
