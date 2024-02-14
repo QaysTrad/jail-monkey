@@ -63,7 +63,7 @@ public class RootedCheck {
             checkSuExists = rootBeer.checkSuExists();
             checkForRootNative = rootBeer.checkForRootNative();
             checkForMagiskBinary = rootBeer.checkForMagiskBinary();
-            checkIsRooted = rootBeer.isRooted()
+            checkIsRooted = rootBeer.isRooted();
         }
 
         public boolean isJailBroken() {
