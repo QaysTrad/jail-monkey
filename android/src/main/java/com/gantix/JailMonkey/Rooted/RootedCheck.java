@@ -4,6 +4,7 @@ import android.content.Context;
 import com.scottyab.rootbeer.RootBeer;
 import java.util.HashMap;
 import java.util.Map;
+import com.guardsquare.dexguard.runtime.detection.*;
 
 public class RootedCheck {
     private static boolean checkWithJailMonkeyMethod() {
@@ -49,9 +50,11 @@ public class RootedCheck {
         private final boolean checkForRootNative;
         private final boolean checkForMagiskBinary;
         private final boolean checkIsRooted;
+        private final boolean checkEmulator;
 
         RootBeerResults(Context context) {
             final RootBeer rootBeer = new RootBeer(context);
+            int checkEmulatorDevice = EmulatorDetector.isRunningInEmulator(context);
             rootBeer.setLogging(false);
 
             detectRootManagementApps = rootBeer.detectRootManagementApps();
@@ -64,13 +67,14 @@ public class RootedCheck {
             checkForRootNative = rootBeer.checkForRootNative();
             checkForMagiskBinary = rootBeer.checkForMagiskBinary();
             checkIsRooted = rootBeer.isRooted();
+            checkEmulator = checkEmulatorDevice != 0;
         }
 
         public boolean isJailBroken() {
             return detectRootManagementApps || detectPotentiallyDangerousApps || checkForSuBinary
                     || checkForDangerousProps || checkForRWPaths
                     || detectTestKeys || checkSuExists || checkForRootNative || checkForMagiskBinary
-                    || checkIsRooted;
+                    || checkIsRooted || checkEmulator;
         }
 
         public Map<String, Object> toNativeMap() {
@@ -86,6 +90,7 @@ public class RootedCheck {
             map.put("checkForRootNative", checkForRootNative);
             map.put("checkForMagiskBinary", checkForMagiskBinary);
             map.put("checkIsRooted", checkIsRooted);
+            map.put("checkEmulator", checkEmulator);
 
             return map;
         }
