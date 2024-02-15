@@ -3,6 +3,7 @@ def safeExtGet(prop, fallback) {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: "dexguard"
 
 buildscript {
   repositories {
@@ -11,7 +12,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.guardsquare:proguard-gradle:7.1.0-beta5'
+    classpath ':dexguard:'
     classpath 'com.android.tools.build:gradle:7.0.0-beta02'
   }
 }
