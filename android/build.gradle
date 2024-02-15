@@ -39,5 +39,5 @@ android {
 dependencies {
     implementation 'com.facebook.react:react-native:+'
     implementation 'com.scottyab:rootbeer-lib:0.1.0'
-    implementation files ('libs/dexguard-runtime.aar')
+    // implementation files ('libs/dexguard-runtime.aar')
 }
