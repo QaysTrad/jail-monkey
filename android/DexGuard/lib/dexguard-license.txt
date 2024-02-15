@@ -1,0 +1,12 @@
+# Guardsquare license file
+expiryDate            = 2024-10-13
+maintenanceExpiryDate = 2024-10-13
+product               = DexGuard
+version               = 7.*,8.*,9.*
+identifier            = com.urpay.consumer,com.urpay.merchant
+licensee              = Al Rajhi bank
+customerID            = AC00011553
+contact               = digitalappsubscriptions Unknown
+contactEmail          = digitalappsubscriptions@neoleap.com.sa
+licenseFileVersion    = 1
+licenseKey            = 1d235cb879970262b1a83753d87752ccbcaf35ce16a3ae91cea13cdabe10c1eefc43ca9ed4a50e852ee18dbe66d021ec725a9a2a75f89fa09bfe4d719194ca30

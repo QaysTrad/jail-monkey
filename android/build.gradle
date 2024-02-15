@@ -9,11 +9,15 @@ buildscript {
   repositories {
     google()
     mavenCentral()
+    maven { url 'https://www.jitpack.io' }
+    maven {
+        url './DexGuard/lib'
+    }
   }
 
   dependencies {
-    classpath ':dexguard:'
-    classpath 'com.android.tools.build:gradle:7.0.0-beta02'
+    classpath('com.guardsquare:dexguard-gradle-plugin:+')
+    classpath("com.android.tools.build:gradle")
   }
 }
 
