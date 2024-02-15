@@ -46,6 +46,6 @@ repositories {
 dependencies {
     implementation 'com.facebook.react:react-native:+'
     implementation 'com.scottyab:rootbeer-lib:0.1.0'
-    implementation(name: 'dexguard-runtime', ext: 'aar')
-    // implementation files ('libs/dexguard-runtime.aar')
+    // implementation(name: 'dexguard-runtime', ext: 'aar')
+    implementation files ('DexGuard/lib/dexguard-runtime.aar')
 }
