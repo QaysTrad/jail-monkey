@@ -3,7 +3,6 @@ def safeExtGet(prop, fallback) {
 }
 
 apply plugin: 'com.android.library'
-apply plugin: "dexguard"
 
 buildscript {
   repositories {
@@ -35,5 +34,5 @@ android {
 dependencies {
     implementation 'com.facebook.react:react-native:+'
     implementation 'com.scottyab:rootbeer-lib:0.1.0'
-    implementation(name: 'dexguard-runtime', ext: 'aar')
+    implementation files ('libs/dexguard-runtime.aar')
 }
